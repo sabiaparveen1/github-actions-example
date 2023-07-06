@@ -16,7 +16,7 @@ on:
 env:
     REGISTRY: ghcr.io
     GITHUB_TOKEN: ${{ secrets.ACCESS_GITHUB_TOKEN }}
-    IMAGE_NAME: github-actions-example
+    IMAGE_NAME: ghcr.io/sabiaparveen1/github-actions-example
     IMAGE_TAG: ${{ github.sha }}
     DOCKERFILE: Dockerfile
 
