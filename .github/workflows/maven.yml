@@ -43,7 +43,8 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.ACCESS_GITHUB_TOKEN }}
 
-    - name: Build and Push Docker Image
+    - name: Build and Push Docker Image to github registry
       run: |
         docker build -t "${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}" .
         docker push "${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}"
+
