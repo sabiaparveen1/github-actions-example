@@ -51,3 +51,8 @@ jobs:
 
     - name: Install Azure CLI
       uses: elstudio/action-install-azure-cli@main
+
+    - name: Set up Azure CLI
+      uses: azure/setup-az-cli@v1
+      with:
+        version: latest
