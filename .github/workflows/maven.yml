@@ -50,7 +50,9 @@ jobs:
         docker push "${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}"
 
     - name: Set up Azure CLI
-      uses: azure/setup-az-cli@v1
+      uses: azure/login@v1
       with:
-        version: latest
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+
 
