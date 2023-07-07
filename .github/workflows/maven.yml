@@ -49,10 +49,10 @@ jobs:
         docker build -t "${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}" .
         docker push "${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}"
 
-    - name: Set up Azure CLI
-      uses: azure/login@v1
-      with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+    - name: Install Azure CLI
+      run: |
+          curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+   
 
 
 
